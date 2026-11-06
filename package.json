@@ -1,0 +1,28 @@
+{
+  "name": "dsh-chat-rewind",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Double-click one of your own messages in DeepSeek Harness to edit it and restart the conversation from that point.",
+  "license": "MIT",
+  "author": "chenyh",
+  "keywords": ["deepseek-harness", "dsh-plugin", "cordis", "chat", "conversation", "rewind", "branch"],
+  "homepage": "https://github.com/cyh8037/dsh-chat-rewind",
+  "bugs": { "url": "https://github.com/cyh8037/dsh-chat-rewind/issues" },
+  "repository": { "type": "git", "url": "git+https://github.com/cyh8037/dsh-chat-rewind.git" },
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": ["index.js", "client.js", "cordis.patch.yml", "locale/*.json", "icon.svg"],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-chat"]
+    }
+  }
+}

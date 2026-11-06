@@ -1,0 +1,3 @@
+- insert:
+    - id: chat-rewind
+      name: 'dsh-chat-rewind'
